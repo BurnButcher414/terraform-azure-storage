@@ -20,3 +20,9 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+      - name: Upload output.txt as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: terraform-output
+          path: output.txt
