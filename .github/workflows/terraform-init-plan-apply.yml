@@ -16,7 +16,7 @@ on:
           - validate-plan
           - apply
           - output
-          - destroy
+   
 
 jobs:
   terraform:
@@ -56,9 +56,9 @@ jobs:
         run: terraform output
 
       # Manual Destroy Only
-      - name: Terraform Destroy
-        if: github.event.inputs.action == 'destroy'
-        run: terraform destroy -auto-approve
+      #- name: Terraform Destroy
+      #  if: github.event.inputs.action == 'destroy'
+      #  run: terraform destroy -auto-approve
 
       # Artifact Upload
       - name: Upload output.txt
